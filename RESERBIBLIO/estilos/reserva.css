@@ -1,0 +1,203 @@
+/* ------------- VISTA "Confirmación reserva" -------------- */
+div.reserva {
+  border: 2px var(--verdeOscuro) solid;
+  border-radius: var(--esquinaElemento);
+  padding: 10px;
+  margin: 0;
+  height: 12vh;
+  background-color: var(--rosaPalido);
+  color: var(--verdeOscuro);
+  font-family: var(--fuenteBody);
+  font-weight: var(--pesoBody);
+  text-align: center;
+}
+
+div.botones.reservaBoton > a {
+  width: 39vw;
+}
+/*-------------------------------------------------------------*/
+
+/* ---------------- TARJETA RESERVA ------------------ */
+section.verReservas {
+  margin: 0 var(--margenLateralPagina);
+  font-family: var(--fuenteBody);
+  color: var(--verdeOscuro);
+}
+
+div.reservaItem {
+  position: relative;
+  height: 170px;
+  width: 100%;
+  font-size: var(--tamBody);
+  font-weight: var(--pesoBody);
+}
+
+/* Caja con la información de la reserva*/
+div.reservaItem > div:first-child {
+  width: 100%;
+  height: 110px;
+  margin: auto;
+  padding: 5px 15px 5px 26%;
+  text-align: right;
+  background-color: var(--turquesa);
+  border-radius: var(--esquinaElemento);
+}
+
+div.reservaItem > div:first-child > p:first-child {
+  hyphens: auto;
+  font-size: var(--tamSubtitulo);
+  margin-bottom: 9px;
+  text-decoration: underline;
+}
+
+/* Caja que contiene la caja de fecha y el icono de borrar */
+div.reservaItem > div:nth-child(2) {
+  position: relative;
+  display: flex;
+  bottom: 80px;
+  height: 110px;
+  justify-content: space-between;
+  align-items: end;
+}
+
+/* Caja con la fecha de la reserva */
+div.reservaItem div.fechaItem {
+  position: relative;
+  left: 12px;
+  padding: 1vw;
+  height: 130px;
+  width: 25%;
+  font-size: var(--tamTitulo);
+  border: 3px solid var(--turquesa);
+  border-radius: var(--esquinaElemento);
+  background-color: var(--blanco);
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+div.control {
+  position: relative;
+  top: 0px;
+  height: 20px;
+  width: 30%;
+}
+
+div.control i {
+  margin-left: 6px;
+  float: right;
+  color: var(--verdeOscuro);
+  font-size: var(--tamSubtitulo);
+}
+
+/* --------- BOTÓN VOLVER INICIO ---------*/
+div.botones a {
+  width: 100%;
+}
+.toInicio {
+  width: 100%;
+  padding: 7px 18px;
+  background-color: var(--verdeOscuro);
+  border: none;
+  border-radius: var(--esquinaBoton);
+  font-family: var(--fuenteBody);
+  font-size: var(--tamBody);
+  color: var(--blanco);
+  transition: background 1s;
+}
+
+.toInicio:hover {
+  background-color: var(--turquesa);
+  border-bottom: 2px solid var(--verdeOscuro);
+  color: var(--verdeOscuro);
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 412px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 412px) {
+  div.botones.reservaBoton > a {
+    width: 37vw;
+  }
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 695px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 695px) {
+  div.botones.reservaBoton > a {
+    width: 35vw;
+  }
+
+  /* ------------- VISTA "Mis reservas" y "reservaQr" --------------- */
+  /* Caja con la información de la reserva*/
+  div.reservaItem > div:first-child {
+    height: 12vw;
+  }
+
+  /* Caja que contiene la caja de fecha y el icono de borrar */
+  div.reservaItem > div:nth-child(2) {
+    bottom: 9vw;
+    right: 10px;
+    height: 12vw;
+  }
+
+  /* Caja con la fecha de la reserva */
+  div.reservaItem div.fechaItem {
+    position: relative;
+    left: 24px;
+    padding: 6px;
+    height: 14vw;
+    width: 140px;
+  }
+  /*-------------------------------------------------------------------*/
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 1100px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 1100px) {
+  div.botones.reservaBoton > a {
+    width: 30vw;
+    height: 60px;
+  }
+
+  button.botonMitad {
+    height: 100%;
+  }
+
+  /* ------------- VISTA "Mis reservas" y "reservaQr" --------------- */
+  /* Caja con la información de la reserva*/
+
+  div.reservaItem > div:first-child {
+    height: 105px;
+    padding-right: 60px;
+    width: 85%;
+  }
+
+  div.reservaItem > div:first-child > p:first-child {
+    font-size: 1.15em;
+  }
+
+  div.reservaItem > div:first-child > p:not(:first-child) {
+    font-size: 0.8em;
+  }
+
+  /* Caja que contiene la caja de fecha y el icono de borrar */
+  div.reservaItem > div:nth-child(2) {
+    bottom: 120px;
+    right: 10px;
+    height: 105px;
+  }
+
+  /* Caja con la fecha de la reserva */
+  div.reservaItem div.fechaItem {
+    position: relative;
+    left: 75px;
+    top: 20px;
+    padding: 15px;
+    height: 95px;
+    width: 190px;
+    font-size: var(--tamBody);
+    text-align: center;
+  }
+
+  div.control i {
+    font-size: var(--tamBody);
+  }
+  /*-------------------------------------------------------------------*/
+}

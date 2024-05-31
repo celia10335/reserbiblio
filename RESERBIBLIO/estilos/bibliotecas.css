@@ -1,0 +1,840 @@
+/* --------- PALETA DE COLORES ----------- 
+-   Verde oscuro (1C5253)
+-	Rosa pálido (D5BBB1)
+-	Turquesa (9CC4B2)
+-	Morado (C98CA7)*/
+
+/* --------- TIPOGRAFÍA -----------
+-   Logo: Expletus Sans
+-   Títulos: Gayathri
+-   Body: Koho
+*/
+
+:root {
+  --verdeOscuro: #1c5253;
+  --verdeOscuroTransparente: #1c5253a1;
+  --rosaPalido: #d5bbb1;
+  --turquesa: #9cc4b2;
+  --morado: #c98ca7;
+  --blanco: white;
+  --negro: black;
+  --gris: #f5f5f5;
+
+  --fuenteLogo: 'Expletus Sans', sans-serif;
+  --fuenteTitulo: 'Gayathri', sans-serif;
+  --fuenteBody: 'KoHo', sans-serif;
+  --pesoRotulo: 500;
+  --pesoHeavy: 700;
+  --pesoMedium: 400;
+  --pesoBody: 600;
+  --pesoMini: 200;
+
+  --tamGigante: 4vw;
+  --tamFuenteLogo: 6.5vw;
+  --tamTitulo: 5vw;
+  --tamSubtitulo: 4vw;
+  --tamTarjeta: 4.5vw;
+  --tamBody: 3.5vw;
+  --tamMini: 2.3vw;
+
+  --margenLateralHeader: 6px;
+  --margenSupHeader: 3px;
+  --margenLateralPagina: 7vw;
+  --esquinaBoton: 7px;
+  --esquinaElemento: 9px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  width: 100vw;
+  height: 85px;
+  background-color: var(--blanco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px var(--margenLateralHeader);
+  margin: 0;
+  border-bottom: solid var(--rosaPalido) 5px;
+}
+
+/* ------ Icono rayitas (menú hamburguesa) ------ */
+div.burger {
+  height: 100%;
+}
+
+.rayitas {
+  position: absolute;
+}
+
+.rayitas span {
+  width: 7vw;
+  height: 5px;
+  margin: 5px 0;
+  background-color: var(--turquesa);
+  border-radius: var(--esquinaBoton);
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 7;
+  transition: all 1s linear;
+}
+
+div.burger input {
+  height: 48px;
+  width: 48px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+}
+
+/* ------- Animación icono rayitas ------- */
+input:checked ~ div span:nth-child(1) {
+  background-color: var(--blanco);
+  transform: translateY(16px) rotate(45deg) translateX(0px);
+  transform-origin: 50% 0;
+}
+
+input:checked ~ div span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+
+input:checked ~ div span:nth-child(3) {
+  background-color: var(--blanco);
+  transform: translateY(-6.5px) rotate(-45deg) translateX(-4px);
+  transform-origin: 50% 0;
+}
+
+input:checked ~ div {
+  padding: 23px 6px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* --------------- MENÚ BURGER -----------------*/
+div.menuBurger {
+  background-color: var(--verdeOscuro);
+  color: var(--blanco);
+  width: 100vw;
+  height: 30vh;
+  position: absolute;
+  top: -50vh;
+  right: 0;
+  text-align: center;
+  z-index: 2;
+  transition: all 1s linear;
+}
+
+div.menuBurger nav {
+  height: 100%;
+}
+
+div.menuBurger nav ul {
+  height: 100%;
+  /* posicionamiento flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+div.menuBurger nav ul li {
+  margin-bottom: 2vh;
+}
+
+div.menuBurger nav ul li.enlace a,
+div.menuBurger nav ul li.enlaceQr {
+  text-align: center;
+  color: var(--blanco);
+  font-family: var(--fuenteBody);
+  font-size: var(--tamTitulo);
+  font-weight: var(--pesoBody);
+  text-decoration: none;
+}
+
+div.menuBurger li.enlace:last-child {
+  display: block;
+  text-align: center;
+}
+
+div.menuBurger li.enlace:last-child i {
+  margin-top: 6px;
+  padding: 0;
+  font-size: 7.5vw;
+}
+
+#qrReserva {
+  margin-top: 9px;
+}
+
+/* -------------------- LOGO Y NOMBRE EN HEADER ----------------------*/
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img.logo {
+  width: 15vw;
+  height: 85%;
+  margin-left: 30px;
+}
+
+div.logo-rotulo {
+  width: 60vw;
+}
+
+div.logo-rotulo h4 {
+  margin-top: var(--margenSupHeader);
+  color: var(--verdeOscuro);
+  font-family: var(--fuenteLogo);
+  font-size: var(--tamFuenteLogo);
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+div.userIcon {
+  display: flex;
+  flex-direction: column;
+  color: var(--verdeOscuro);
+}
+
+div.userIcon p {
+  font-family: var(--fuenteBody);
+  font-size: var(--tamMini);
+  margin-top: 6px;
+}
+
+div.cerrarSesion {
+  height: 55px;
+  width: 70px;
+  position: absolute;
+  top: -80px;
+  right: 0;
+  transition: all 1s linear;
+}
+
+div.cerrarSesion a {
+  width: 100%;
+}
+
+div.cerrarSesion button {
+  padding: 7px 18px;
+  background-color: var(--verdeOscuro);
+  border: none;
+  border-radius: var(--esquinaBoton);
+  font-family: var(--fuenteBody);
+  font-size: var(--tamBody);
+  color: var(--blanco);
+}
+
+/* Se refiere a las propiedades del botón "Cerrar sesión" cuando se hace clic en el icono de "User"*/
+div.visible {
+  top: 80px;
+}
+
+/* ------------- MENÚ HORIZONTAL (VERSIÓN ESCRITORIO -------------- */
+div.menuHorizontal {
+  width: 50vw;
+  display: none;
+}
+
+/* -------------- SECCIÓN "HERO" -------------- */
+.hero {
+  position: relative;
+  background-image: url('../img/sala-biblioteca.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 22vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+section.hero > div:first-child {
+  display: none;
+}
+
+.hero img {
+  width: 100px;
+  margin: 0 60px;
+}
+
+.hero h1 {
+  font-family: var(--fuenteLogo);
+  font-size: var(--tamGigante);
+  font-weight: var(--pesoRotulo);
+  color: var(--blanco);
+}
+
+.hero p {
+  position: relative;
+  top: 60%;
+  height: 40%;
+  width: 100vw;
+  padding: 12px 50px;
+  color: var(--blanco);
+  background-color: var(--verdeOscuroTransparente);
+  font-weight: var(--pesoMedium);
+  font-family: var(--fuenteTitulo);
+  font-size: var(--tamSubtitulo);
+  text-align: center;
+}
+
+/* -------------- CUERPO PRINCIPAL DE LA PÁGINA -------------- */
+section.principal {
+  width: 100vw;
+  height: 100%;
+  padding: 3.5vh var(--margenLateralPagina);
+  color: var(--verdeOscuro);
+}
+
+section.principal > h2,
+h2 + p {
+  font-family: var(--fuenteTitulo);
+  font-size: var(--tamTitulo);
+  font-weight: var(--pesoHeavy);
+  text-align: center;
+}
+
+section.principal > h2 + p {
+  font-size: var(--tamBody);
+  font-weight: var(--pesoBody);
+  text-align: justify;
+  hyphens: auto;
+  margin-bottom: 2vh;
+}
+
+/* -------------- TARJETAS BIBLIOTECA -------------- */
+div.bibliotecas {
+  width: 100%;
+  margin: 0;
+  height: 48vh;
+  /* height: 700px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+div.bibliotecas a {
+  color: var(--blanco);
+  font-size: var(--tamBody);
+  font-weight: var(--pesoBody);
+  text-decoration: none;
+}
+
+div.tarjeta {
+  height: 25vh;
+  width: 100%;
+  margin: 10px 0;
+  /* margin-right: 30px; */
+  background-color: var(--turquesa);
+  border-radius: var(--esquinaElemento);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.tarjeta div h3 {
+  padding: 10px 0;
+  text-align: center;
+  font-family: var(--fuenteTitulo);
+  font-size: var(--tamTarjeta);
+  font-weight: var(--pesoMedium);
+  color: var(--verdeOscuro);
+}
+
+div.tarjeta div p {
+  padding: 0;
+  text-align: center;
+  font-family: var(--fuenteBody);
+  font-size: var(--tamMini);
+  font-weight: var(--pesoMedium);
+  color: var(--verdeOscuro);
+}
+
+div.tarjeta > div {
+  padding: 0;
+  width: 100%;
+}
+
+div.tarjeta div:first-child {
+  margin: auto;
+  height: 10%;
+  /* height: 10%; */
+}
+
+div.tarjeta div:nth-child(2) {
+  height: 20%;
+  padding: 4% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* ----------- Hacer visible en versión escritorio ------------- */
+div.tarjeta div:last-child {
+  height: 12%;
+  background-color: var(--verdeOscuro);
+  border-radius: 0 0 var(--esquinaElemento) var(--esquinaElemento);
+  display: none;
+}
+
+div.tarjeta div:last-child:hover {
+  background-color: var(--negro);
+}
+
+i {
+  font-size: var(--tamSubtitulo);
+  padding-left: 15%;
+}
+
+div.foto {
+  /* Quitar las esquinas redondeadas para que se pueda ver la imagen en Opera */
+  border-radius: none;
+  padding: 0;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+}
+
+div.bibliotecas > a:first-child div.foto {
+  background-color: maroon;
+  background-image: url('../img/adolfo-suarez.jpg');
+}
+div.bibliotecas > a:nth-child(2) div.foto {
+  background-color: maroon;
+  background-image: url('../img/biblioteca-morro-fachada.jpeg');
+}
+div.bibliotecas > a:last-child div.foto {
+  background-color: maroon;
+  background-image: url('../img/estacion.jpg');
+}
+
+/* ---------------- SECCIÓN CARTELA (foto y nombre biblioteca), vistas "Calendario", "Horas", "Plantas" y "Asiento" ----------------- */
+section#cartela {
+  position: relative;
+  top: 0;
+  z-index: 0;
+  height: 20vh;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+section#cartela > div.infoBiblio {
+  padding: 8px var(--margenLateralPagina);
+  margin: 0;
+  height: 60%;
+  width: 100%;
+  background-color: var(--verdeOscuroTransparente);
+  display: flex;
+  flex-direction: column;
+}
+
+section#cartela > div.infoBiblio h1 {
+  color: var(--blanco);
+  font-family: var(--fuenteTitulo);
+  font-size: var(--tamTitulo);
+  font-weight: var(--pesoMedium);
+  text-align: justify;
+}
+
+section#cartela > div.infoBiblio p {
+  color: var(--blanco);
+  font-family: var(--fuenteBody);
+  font-size: var(--tamBody);
+  font-weight: var(--pesoMedium);
+}
+
+/* ------------- BOTONES "Aceptar" y "Cancelar" de todas las vistas -------------- */
+div.botones {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input#aceptar,
+input#cancelar,
+button.botonMitad,
+button.botonAnchoCompleto {
+  padding: 7px 18px;
+  background-color: var(--verdeOscuro);
+  border: none;
+  border-radius: var(--esquinaBoton);
+  font-family: var(--fuenteBody);
+  font-size: var(--tamBody);
+  color: var(--blanco);
+}
+
+input#aceptar,
+div.botones > a {
+  width: 39vw;
+}
+
+input#cancelar,
+button.botonMitad,
+a#anchoCompleto,
+a button.botonAnchoCompleto {
+  width: 100%;
+}
+
+.botones a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------- FOOTER ---------------------------*/
+footer {
+  width: 100vw;
+  height: 120px;
+  border-top: 6px var(--rosaPalido) solid;
+  background-color: var(--verdeOscuro);
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 412px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 412px) {
+  :root {
+    --tamFuenteLogo: 2em;
+    --tamTitulo: 1.8em;
+    --tamSubtitulo: 1.2em;
+    --tamTarjeta: 1.4em;
+    --tamBody: 1em;
+    --tamMini: 0.8em;
+
+    --margenLateralHeader: 20px;
+    --margenSupHeader: 15px;
+    --margenLateralPagina: 10vw;
+    --esquinaBoton: 7px;
+    --esquinaElemento: 13px;
+  }
+
+  div.logo-rotulo {
+    width: auto;
+  }
+  div.logo-rotulo img.logo {
+    height: 70px;
+    width: auto;
+  }
+
+  div.logo-rotulo h4 {
+    font-size: var(--tamFuenteLogo);
+  }
+
+  div.menuBurger {
+    height: 320px;
+    top: -330px;
+  }
+
+  div.menuBurger nav ul li.enlace a,
+  div.menuBurger nav ul li.enlaceQr p {
+    font-size: 1.4rem;
+  }
+
+  /* -------------------- SECCIÓN "HERO" -------------------------*/
+  section.hero {
+    min-height: 180px;
+  }
+
+  /* -------------------- SECCIÓN "CARTELA" en vista CALENDARIO y siguientes -------------------------*/
+  section#cartela {
+    height: 270px;
+  }
+
+  section#cartela div.infoBiblio {
+    padding-top: 2vw;
+    height: 170px;
+  }
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 695px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 695px) {
+  :root {
+    --tamGigante: 4.3em;
+    --tamFuenteLogo: 1em;
+    --tamTitulo: 3.4vw;
+    --tamSubtitulo: 2.4vw;
+    --tamTarjeta: 0.95em;
+    --tamTarjetaInfo: 0.7em;
+    --tamBody: 1.8vw;
+    --tamMini: 0.9em;
+
+    --margenLateralHeader: 20px;
+    --margenSupHeader: 15px;
+    --margenLateralPagina: 12vw;
+    --esquinaBoton: 7px;
+    --esquinaElemento: 13px;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  header div.burger {
+    display: none;
+  }
+
+  header div.menuHorizontal {
+    display: block;
+  }
+
+  header {
+    justify-content: stretch;
+    /*width: 100vw;*/
+    padding: 0 var(--margenLateralHeader);
+  }
+
+  /* -------------------- LOGO Y NOMBRE EN HEADER ----------------------*/
+  div.logo-rotulo {
+    width: 20%;
+    height: 100%;
+
+    /* Organización dentro del div*/
+    display: flex;
+    align-items: start;
+    justify-content: start;
+  }
+
+  img.logo {
+    width: auto;
+    height: 70px;
+    margin-left: 0;
+  }
+
+  div.logo-rotulo h4 {
+    margin-left: 6px;
+    margin-top: var(--margenSupHeader);
+    font-size: var(--tamFuenteLogo);
+    font-weight: var(--pesoHeavy);
+  }
+
+  /* ------------- MENÚ HORIZONTAL (VERSIÓN ESCRITORIO) -------------- */
+  div.menuHorizontal {
+    width: 65%;
+    height: 100%;
+  }
+  nav {
+    width: 100%;
+    height: 100%;
+    margin-top: var(--margenSupHeader);
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: end;
+  }
+
+  li.enlace {
+    list-style-type: none;
+    margin: 0 0 0 30px;
+    padding: 0 15px;
+    height: 40px;
+    transition: background 1s;
+  }
+
+  li.enlace a {
+    text-align: right;
+    color: var(--verdeOscuro);
+    font-family: var(--fuenteBody);
+    font-size: var(--tamMini);
+    font-weight: var(--pesoBody);
+    text-decoration: none;
+  }
+
+  li.enlace:last-child {
+    margin: 0;
+    min-width: 80px;
+    text-align: right;
+  }
+
+  li.enlace:hover {
+    background-color: var(--rosaPalido);
+  }
+
+  /* -------------- CUERPO PRINCIPAL DE LA PÁGINA -------------- */
+  section.principal {
+    width: 100vw;
+    margin: 0;
+    padding: 0 var(--margenLateralPagina);
+    padding-top: 3.5vh;
+    color: var(--verdeOscuro);
+  }
+
+  div.bibliotecas > a {
+    width: 24vw;
+  }
+
+  div.bibliotecas > a > div.tarjeta {
+    width: 100%;
+    border: #1c5253 2px solid;
+  }
+
+  /* ------------- BOTONES "Aceptar" y "Cancelar" de todas las vistas -------------- */
+  input#aceptar,
+  div.botones > a {
+    width: 36vw;
+    transition: background 1s;
+  }
+
+  .boton {
+    background-color: var(--verdeOscuro);
+    border: none;
+    border-radius: var(--esquinaBoton);
+    font-family: var(--fuenteBody);
+    font-size: var(--tamMini);
+    color: var(--blanco);
+    padding: 7px 18px;
+  }
+
+  input#aceptar:hover,
+  div.botones > a > input#cancelar:hover {
+    background-color: var(--turquesa);
+    border-bottom: 2px solid var(--verdeOscuro);
+    color: var(--verdeOscuro);
+  }
+
+  /* ------------- ICONO "USER" Y NOMBRE DE USUARIO -------------- */
+  div.userIcon {
+    width: auto;
+    height: 100%;
+    flex-direction: row;
+    justify-content: end;
+    align-items: start;
+    margin: var(--margenSupHeader) 0 0 30px;
+  }
+
+  div.userIcon p {
+    margin-left: 0px;
+    text-align: right;
+  }
+
+  div.userIcon i {
+    margin-top: 4px;
+  }
+
+  div.cerrarSesion {
+    width: 170px;
+    right: 0;
+  }
+
+  /* -------------------- SECCIÓN "HERO" -------------------------*/
+  section.hero {
+    min-height: 230px;
+  }
+
+  /* -------------------- SECCIÓN "PRINCIPAL" -------------------------*/
+  section.principal {
+    padding-top: 50px;
+  }
+  div.bibliotecas {
+    height: 380px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  div.tarjeta {
+    height: 100%;
+    width: 25vw;
+    margin: auto;
+  }
+
+  div.tarjeta div:first-child {
+    height: 19%;
+    padding: 0 30px;
+  }
+  div.tarjeta > div > h3 {
+    margin-bottom: 4px;
+  }
+  div.tarjeta > div > p {
+    font-size: var(--tamTarjetaInfo);
+  }
+
+  div.tarjeta:last-child {
+    margin-right: 0;
+  }
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 1100px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 1100px) {
+  :root {
+    --tamTarjeta: 1.2em;
+    --tamTarjetaInfo: 0.8em;
+
+    --tamTitulo: 2.4em;
+    --tamSubtitulo: 1.4em;
+    --tamBody: 1.3em;
+    --tamMini: 1.1em;
+
+    --margenLateralHeader: 40px;
+  }
+
+  section.hero > div:first-child {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 15px;
+    background-color: var(--verdeOscuroTransparente);
+  }
+
+  section.hero p {
+    top: 0;
+    height: auto;
+  }
+
+  /* -------------- CUERPO PRINCIPAL DE LA PÁGINA -------------- */
+  div.bibliotecas > a {
+    width: 24vw;
+    height: 490px;
+  }
+
+  /* ------------- BOTONES "Aceptar" y "Cancelar" de todas las vistas -------------- */
+  div.botones {
+    height: 50px;
+    margin-top: 20px;
+  }
+  input#aceptar,
+  div.botones > a {
+    width: 32vw;
+    height: 100%;
+  }
+  input#cancelar {
+    height: 100%;
+  }
+
+  /* -------------------- SECCIÓN "CARTELA" en vista CALENDARIO y siguientes -------------------------*/
+  section#cartela {
+    height: 280px;
+  }
+
+  section#cartela div.infoBiblio {
+    padding-top: 18px;
+    height: 135px;
+  }
+}

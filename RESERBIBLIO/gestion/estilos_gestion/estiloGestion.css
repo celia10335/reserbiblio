@@ -1,0 +1,174 @@
+/* --------- PALETA DE COLORES ----------- 
+-   Verde oscuro (1C5253)
+-	Rosa pálido (D5BBB1)
+-	Turquesa (9CC4B2)
+-	Morado (C98CA7)*/
+
+/* --------- TIPOGRAFÍA -----------
+-   Logo: Expletus Sans
+-   Títulos: Gayathri
+-   Body: Koho
+*/
+
+:root {
+  --verdeOscuro: #1c5253;
+  --verdeOscuroTransparente: #1c5253a1;
+  --rosaPalido: #d5bbb1;
+  --turquesa: #9cc4b2;
+  --morado: #c98ca7;
+  --blanco: white;
+  --negro: black;
+  --gris: #f5f5f5;
+
+  --fuenteLogo: 'Expletus Sans', sans-serif;
+  --fuenteTitulo: 'Gayathri', sans-serif;
+  --fuenteBody: 'KoHo', sans-serif;
+  --pesoRotulo: 500;
+  --pesoHeavy: 700;
+  --pesoMedium: 400;
+  --pesoBody: 600;
+  --pesoMini: 200;
+
+  --tamGigante: 4vw;
+  --tamFuenteLogo: 4.3vw;
+  --tamTitulo: 2.8vw;
+  --tamSubtitulo: 2vw;
+  --tamTarjeta: 4.5vw;
+  --tamBody: 1.55vw;
+  --tamMini: 2.3vw;
+
+  --margenLateralHeader: 6px;
+  --margenSupHeader: 3px;
+  --margenLateralPagina: 7vw;
+  --esquinaBoton: 7px;
+  --esquinaElemento: 9px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 6vh 12vw;
+}
+
+div.imgInicio {
+  height: 4.6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+img.logoInicio {
+  height: 100%;
+  width: auto;
+}
+
+h1 {
+  font-family: var(--fuenteTitulo);
+  font-size: var(--tamTitulo);
+  color: var(--verdeOscuro);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+p {
+  font-family: var(--fuenteBody);
+  font-size: var(--tamBody);
+  color: var(--verdeOscuro);
+  text-align: left;
+}
+
+span.gestionInicio {
+  font-family: var(--fuenteLogo);
+  font-size: var(--tamFuenteLogo);
+  color: var(--verdeOscuro);
+}
+
+div.inicio {
+  margin-top: 40px;
+  height: 12vw;
+  width: 100%;
+  /* --- flex --- */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+div.inicio a {
+  height: 100%;
+  width: 42%;
+  color: var(--verdeOscuro);
+  background-color: var(--turquesa);
+  border-radius: var(--esquinaElemento);
+  transition: all 1s ease;
+  text-decoration: none;
+}
+
+div.inicio div {
+  padding: 20px;
+  height: 100%;
+
+  /* --- flex --- */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+div.inicio p {
+  font-size: var(--tamSubtitulo);
+  text-align: center;
+}
+
+div.inicio i {
+  font-size: 4vw;
+}
+
+div.inicio a:hover {
+  background-color: var(--rosaPalido);
+  border: 6px solid var(--morado);
+}
+
+/* ------------ Pantallas de añadir asientos y franjas -----------*/
+div.grupoForm,
+div.grupoForm input,
+div.grupoForm,
+div.grupoForm select {
+  font-family: var(--fuenteBody);
+  font-size: var(--tamBody);
+  color: var(--verdeOscuro);
+  margin-bottom: 20px;
+}
+
+div.grupoForm input,
+div.grupoForm select {
+  height: 3vw;
+  padding: 0 6px;
+}
+
+div.grupoForm .botonForm {
+  height: 4.5vw;
+  width: 20vw;
+  background-color: var(--turquesa);
+
+  transition: all 1s ease;
+}
+
+div.grupoForm .botonForm:hover {
+  background-color: var(--rosaPalido);
+  border: 6px solid var(--morado);
+}
+
+div.a-inicio {
+  width: 40.5vw;
+  height: 50px;
+  margin-top: 40px;
+}
+
+div.a-inicio a div p {
+  color: var(--verdeOscuro);
+  font-weight: var(--pesoHeavy);
+}

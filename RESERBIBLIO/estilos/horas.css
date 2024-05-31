@@ -1,0 +1,98 @@
+div.cajaDatos {
+  border: 2px var(--verdeOscuro) solid;
+  border-radius: var(--esquinaElemento);
+  padding: 0;
+  margin: 0;
+  height: 260px;
+  font-family: var(--fuenteBody);
+  font-weight: var(--pesoBody);
+}
+
+div.cajaDatos > div:first-child {
+  height: 20%;
+  margin-bottom: 0;
+  background-color: var(--rosaPalido);
+  border-radius: var(--esquinaElemento) var(--esquinaElemento) 0 0;
+  color: var(--verdeOscuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.cajaDatos > div:first-child p {
+  font-size: var(--tamSubtitulo);
+}
+
+div.cajaDatos > div:first-child > p.resumen {
+  font-size: var(--tamBody);
+}
+
+div.cajaDatos div.contenedorHoras {
+  height: 80%;
+  width: 100%;
+}
+
+.datoUnidad {
+  height: 37px;
+  width: 28%;
+  margin: 8px;
+  color: var(--verdeOscuro);
+  background-color: var(--blanco);
+  border: 2px var(--verdeOscuro) solid;
+  border-radius: var(--esquinaBoton);
+  font-size: var(--tamSubtitulo);
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numPlanta {
+  height: 90px;
+  margin: 5% 2%;
+}
+
+#recogeDatos {
+  display: none;
+}
+
+.seleccionado {
+  background-color: var(--morado);
+  color: var(--blanco);
+  font-weight: var(--pesoHeavy);
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 695px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 695px) {
+  div.cajaDatos {
+    height: 180px;
+  }
+
+  input[type='button'].datoUnidad {
+    height: 50px;
+    width: 14%;
+    margin: 8px;
+    transition: background 1s, border 0.5s;
+  }
+
+  input[type='button'].datoUnidad:last-child {
+    margin-right: 0;
+  }
+
+  input[type='button'].datoUnidad:hover {
+    background-color: var(--turquesa);
+    border: 4px solid var(--morado);
+  }
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 1100px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 1100px) {
+  div.cajaDatos {
+    height: 280px;
+  }
+
+  input[type='button'].datoUnidad {
+    height: 75px;
+    margin: 16px;
+  }
+}

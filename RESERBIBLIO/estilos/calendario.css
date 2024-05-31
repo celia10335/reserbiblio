@@ -1,0 +1,129 @@
+/* --------- PALETA DE COLORES ----------- 
+-   Verde oscuro (1C5253)
+-	Rosa pálido (D5BBB1)
+-	Turquesa (9CC4B2)
+-	Morado (C98CA7)*/
+
+/* --------- TIPOGRAFÍA -----------
+-   Logo: Expletus Sans
+-   Títulos: Gayathri
+-   Body: Koho
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------- CALENDARIO ----------------- */
+div#datepicker {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 320px;
+  background-color: var(--turquesa);
+  display: flex;
+  flex-direction: column;
+}
+
+#datepicker > div {
+  width: 90%;
+  height: 90%;
+  background-color: transparent;
+  border: solid 2px var(--verdeOscuro);
+  color: var(--verdeOscuro);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#datepicker table {
+  margin: 0;
+  height: 85%;
+  flex: auto;
+  align-items: center;
+  color: var(--verdeOscuro);
+  font-family: var(--fuenteBody);
+  font-size: var(--tamBody);
+  font-weight: var(--pesoMedium);
+}
+
+div.ui-datepicker-header {
+  height: 15%;
+  align-items: flex-start;
+  background-color: transparent;
+  border: none;
+  color: var(--verdeOscuro);
+  font-family: var(--fuenteTitulo);
+  font-size: var(--tamSubtitulo);
+  font-weight: var(--pesoMedium);
+  text-transform: uppercase;
+}
+
+#datepicker table td span {
+  text-align: center;
+  background-color: transparent;
+  color: var(--blanco);
+}
+
+#datepicker table td a {
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: var(--verdeOscuro);
+  font-weight: var(--pesoHeavy);
+  border: solid 4px var(--turquesa);
+  border-radius: var(--esquinaBoton);
+}
+
+#datepicker table td a.ui-state-active {
+  color: var(--blanco);
+  background-color: var(--verdeOscuro);
+  border: solid 4px var(--morado);
+  border-radius: var(--esquinaBoton);
+}
+
+div.horas {
+  width: 100%;
+  height: 300px;
+  border: solid 3px var(--verdeOscuro);
+  border-radius: var(--esquinaElemento);
+}
+
+div.horas > div {
+  width: 100%;
+}
+
+input#fecha {
+  background-color: var(--turquesa);
+  border: none;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 1vh;
+  text-align: center;
+  color: var(--verdeOscuro);
+  font-family: var(--fuenteBody);
+  font-size: var(--tamSubtitulo);
+  font-weight: var(--pesoHeavy);
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 695px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 695px) {
+  div#datepicker {
+    height: 460px;
+  }
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 1100px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 1100) {
+  div#datepicker {
+    height: 520px;
+  }
+
+  section.principal form input[type='text']#fecha {
+    height: 80px;
+    padding-bottom: 5px;
+  }
+}

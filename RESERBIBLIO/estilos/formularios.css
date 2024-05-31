@@ -1,0 +1,355 @@
+/* --------- PALETA DE COLORES ----------- 
+-   Verde oscuro (1C5253)
+-	Rosa pálido (D5BBB1)
+-	Turquesa (9CC4B2)
+-	Morado (C98CA7)*/
+
+/* --------- TIPOGRAFÍA -----------
+-   Logo: Expletus Sans
+-   Títulos: Gayathri
+-   Body: Koho
+*/
+
+:root {
+  --verdeOscuro: #1c5253;
+  --verdeOscuroTransparente: #1c5253a1;
+  --rosaPalido: #d5bbb1;
+  --turquesa: #9cc4b2;
+  --morado: #c98ca7;
+  --blanco: white;
+  --negro: black;
+  --gris: #f5f5f5;
+  --colorError: #b31111;
+
+  --fuenteLogo: 'Expletus Sans', sans-serif;
+  --fuenteTitulo: 'Gayathri', sans-serif;
+  --fuenteBody: 'KoHo', sans-serif;
+  --pesoRotulo: 500;
+  --pesoHeavy: 700;
+  --pesoMedium: 400;
+  --pesoBody: 600;
+  --pesoMini: 200;
+
+  --tamGigante: 8vw;
+  --tamFuenteLogo: 6.5vw;
+  --tamTitulo: 5vw;
+  --tamSubtitulo: 4.5vw;
+  --tamTarjeta: 4.5vw;
+  --tamBody: 3.5vw;
+  --tamMini: 2.3vw;
+
+  --margenLateralHeader: 6px;
+  --margenSupHeader: 3px;
+  --margenLateralPagina: 7vw;
+  --esquinaBoton: 7px;
+  --esquinaElemento: 4px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 15vh;
+  background-color: var(--verdeOscuro);
+  color: var(--blanco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  font-family: var(--fuenteLogo);
+  font-size: var(--tamGigante);
+  font-weight: var(--pesoMedium);
+  margin: 0 6vw;
+}
+
+.header img {
+  height: 8vw;
+}
+
+.contenido {
+  background-color: var(--blanco);
+  color: var(--verdeOscuro);
+  padding: 20px var(--margenLateralPagina);
+}
+
+.contenido h1 {
+  font-family: var(--fuenteTitulo);
+  font-size: var(--tamGigante);
+  font-weight: var(--pesoHeavy);
+  text-align: center;
+  margin-top: 5vh;
+}
+
+/* ------------- CAMPOS DEL FORMULARIO ------------- */
+.campoForm {
+  position: relative;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.contenido p,
+label {
+  font-family: var(--fuenteBody);
+  font-size: var(--tamBody);
+  font-weight: var(--pesoBody);
+  margin-bottom: 5px;
+}
+
+input.form-control,
+input.campoCorrecto {
+  padding: 3px;
+  width: 100%;
+  height: 6.7vw;
+  align-self: center;
+  border: 2px solid var(--turquesa);
+  border-radius: var(--esquinaElemento);
+  color: var(--verdeOscuro);
+}
+
+input.form-control:focus {
+  border: 3px solid var(--verdeOscuro);
+  background-color: var(--turquesa);
+  outline: none;
+}
+
+label.etiqueta {
+  cursor: pointer;
+}
+
+.oculto {
+  display: none;
+}
+
+/* ------------------ CONTROLES DE VALIDACIÓN DE FORMULARIO ------------------- */
+p.mensajeError,
+div.errorFormulario {
+  font-size: var(--tamMini);
+  display: none;
+}
+
+p.mensajeError.hayError,
+div#errorFormulario.hayError {
+  display: block;
+}
+
+.fa-check {
+  color: var(--verdeOscuro);
+  font-size: var(--tamMini);
+  opacity: 0;
+}
+
+.correcto {
+  opacity: unset;
+}
+
+div.campoForm input.campoIncorrecto {
+  border: 3px solid var(--colorError);
+}
+
+.incorrecto,
+.fa-circle-xmark,
+.fa-triangle-exclamation {
+  color: var(--colorError);
+  font-size: var(--tamMini);
+}
+
+/* ----------------------- BOTONES "Aceptar" / "Cancelar" --------------------- */
+div.botones {
+  width: 100%;
+  height: 5vh;
+  margin-top: 36px;
+  /* ajustar en versión ESCRITORIO
+    height: 47px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.boton {
+  width: 100%;
+  height: 5vh;
+  padding: 7px 18px;
+  background-color: var(--verdeOscuro);
+  border: none;
+  border-radius: var(--esquinaBoton);
+  font-family: var(--fuenteBody);
+  font-size: var(--tamBody);
+  color: var(--blanco);
+}
+
+#guardar,
+#cancelar {
+  width: 48%;
+}
+
+form + p,
+h4.seccionFormulario {
+  text-align: center;
+  margin: 5vh 0 10px 0;
+}
+
+.contenido h2 {
+  font-family: var(--fuenteBody);
+  font-size: var(--tamGigante);
+  font-weight: var(--pesoBody);
+  margin: 0;
+  text-align: center;
+}
+
+.contenido h4 {
+  font-family: var(--fuenteBody);
+  font-size: var(--tamSubtitulo);
+  font-weight: var(--pesoHeavy);
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.warning {
+  color: var(--morado);
+  font-family: var(--fuenteBody);
+  font-size: var(--tamBody);
+  font-weight: var(--pesoMedium);
+}
+
+.separador {
+  margin: 5vh 0 10px 0;
+}
+
+/* ---------- TABLA DATOS USUARIO ---------- */
+table {
+  border-collapse: collapse;
+  border: 2px solid var(--turquesa);
+  color: var(--verdeOscuro);
+  font-family: var(--fuenteBody);
+  font-size: var(--tamBody);
+  font-weight: var(--pesoBody);
+  margin: auto;
+  margin-top: 33px;
+  width: 100%;
+}
+
+td {
+  height: 3.5vh;
+  padding: 15px;
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 412px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 412px) {
+  :root {
+    --tamFuenteLogo: 2em;
+    --tamTitulo: 1.8em;
+    --tamSubtitulo: 1.2em;
+    --tamTarjeta: 1.4em;
+    --tamBody: 1em;
+    --tamMini: 0.8em;
+
+    --margenLateralHeader: 20px;
+    --margenSupHeader: 15px;
+    --margenLateralPagina: 10vw;
+    --esquinaBoton: 7px;
+    --esquinaElemento: 13px;
+  }
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 695px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 695px) {
+  :root {
+    --tamGigante: 6vw;
+    --tamFuenteLogo: 1em;
+    --tamTitulo: 3.4vw;
+    --tamSubtitulo: 2.4vw;
+    --tamTarjeta: 0.95em;
+    --tamTarjetaInfo: 0.7em;
+    --tamBody: 1.8vw;
+    --tamMini: 0.9em;
+
+    --margenLateralHeader: 20px;
+    --margenSupHeader: 15px;
+    --margenLateralPagina: 12vw;
+    --esquinaBoton: 7px;
+    --esquinaElemento: 13px;
+  }
+
+  section.contenido {
+    width: 75vw;
+  }
+  button.boton {
+    height: 8.5vh;
+  }
+  div.botones a {
+    width: 46%;
+  }
+
+  div.botones > a > button,
+  div.botones > input#guardar,
+  a#cancelar > input.boton {
+    transition: background 1s;
+  }
+
+  div.botones > a > button:hover,
+  div.botones > input#guardar:hover,
+  a#cancelar > input.boton:hover {
+    background-color: var(--turquesa);
+    border-bottom: 2px solid var(--verdeOscuro);
+    color: var(--verdeOscuro);
+  }
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%% MEDIAQUERY - desde 1100px %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media screen and (min-width: 1100px) {
+  :root {
+    --tamGigante: 3.3em;
+
+    --tamTarjeta: 1.2em;
+    --tamTarjetaInfo: 0.8em;
+
+    --tamTitulo: 2.4em;
+    --tamSubtitulo: 1.6em;
+    --tamBody: 1.35em;
+    --tamMini: 1.1em;
+
+    --margenLateralHeader: 40px;
+  }
+
+  main {
+    display: flex;
+  }
+
+  main > section.header,
+  main > section.contenido {
+    width: 50vw;
+    height: 100vh;
+  }
+
+  section.contenido {
+    margin-top: 13vh;
+  }
+
+  section.header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section.contenido input.form-control {
+    height: 49px;
+    font-size: var(--tamBody);
+  }
+
+  button.boton {
+    height: 55px;
+  }
+
+  /* ---------- VISTAS "Mi perfil" y "Editar datos personales" --------- */
+  main > section.contenido.formulario {
+    width: 75vw;
+    margin: 15px;
+  }
+}
